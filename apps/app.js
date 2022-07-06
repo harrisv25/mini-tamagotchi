@@ -7,3 +7,4 @@ class Creature {
         Age = 0
     }
 }
+
