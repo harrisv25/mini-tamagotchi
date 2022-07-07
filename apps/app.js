@@ -4,7 +4,22 @@ class Creature {
         this.hunger = 1
         this.sleepiness = 1
         this.boredom = 1
-        Age = 0
+        this.age = 0
     }
 }
 
+starterForm = document.querySelector('#starter input')
+goButton = document.querySelector('#starter #goButton')
+
+let pet = {}
+
+function createPet (name) {
+    let myPet = document.createElement("div")
+    myPet.setAttribute('id', name)
+    myPet.setAttribute('class', "egg")
+    document.querySelector('#center-piece').appendChild(myPet)
+    document.querySelector('#starter').parentNode.removeChild(document.querySelector('#starter'))
+    pet = new Creature(name)
+}
+
+goButton.addEventListener("click", () => createPet(starterForm.value))
