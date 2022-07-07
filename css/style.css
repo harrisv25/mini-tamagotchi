@@ -5,9 +5,33 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;    
 }
 
 div {
     background-color: grey;
+    text-align: center;
+}
+
+/* utilized https://stackoverflow.com/questions/7364516/put-divs-in-each-corner-of-the-page to quickly figure out how to align my divs the way I wanted */
+
+.box {
+    position: absolute;
+    /* background-color: red; */
+    width: 15%;
+    height: 15%;
+}
+.box.top { top: 10%;}
+.box.right { right: 10%; }
+.box.left { left: 10%; }
+.box.bottom { bottom: 10% }
+.box.center {
+    top:40%;
+    right: 40%;
+    width: 20%;
+    height: 20%;
+}
+
+#center-piece {
+    font-size: 150%;
 }
