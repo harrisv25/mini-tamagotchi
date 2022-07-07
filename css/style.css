@@ -32,6 +32,14 @@ div {
     height: 20%;
 }
 
-#center-piece {
-    font-size: 150%;
+#starter {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
 }
+
+#eat img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: -12%;
+   }
