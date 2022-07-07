@@ -43,3 +43,9 @@ div {
     max-height: 100%;
     margin-top: -12%;
    }
+
+#sleep img {
+    max-width: 130%;
+    max-height: 130%;
+    margin-top: -20%;
+   }
