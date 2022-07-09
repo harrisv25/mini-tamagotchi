@@ -5,7 +5,7 @@ class Creature {
         this.sleepiness = 1
         this.boredom = 1
         this.fitness = 1
-        this.age = 0
+        this.age = 1
         this.alive = 1
     }
     getAge() {
@@ -23,15 +23,23 @@ class Creature {
     getBoredom() {
         return this.boredom
     }
-    getFitness() {
-        return this.fitness
-    }
+    // getFitness() {
+    //     return this.fitness
+    // }
     ageUp() {
         this.hunger += 1
         this.sleepiness += 1
         this.boredom += 1
-        this.fitness += 1
-        this.age += 0
+        // this.fitness += 1
+        this.age += 1
+        let eat2 = document.querySelector('#eat h2');
+        eat2.innerHTML = pet.getHunger()
+        let sleep2 = document.querySelector('#sleep h2');
+        sleep2.innerHTML = pet.getSleepiness()
+        let play2 = document.querySelector('#play h2');
+        play2.innerHTML = pet.getBoredom()
+        let exc2 = document.querySelector('#age h2');
+        exc2.innerHTML = pet.getAge()
     }
     play() {
         if (this.boredom > 1) {
@@ -47,18 +55,15 @@ class Creature {
         if (this.sleepiness > 1) {
             this.sleepiness -= 1
         }
-    }
-    exercise() {
-        if (this.boredom > 1) {
-            this.boredom -= 1
-            }
-        if (this.fitness > 2) {
-            this.fitness -= 1
-            }  
-        this.hunger += 1
-        this.sleepiness += 1
+        document.body.style.backgroundColor = "black";
+        document.body.style.backgroundImage = "none";
+        function lightsOn() {
+            document.body.style.backgroundImage = url('../img/wild_background.gif')
         }
+        window.setTimeout(lightsOn(), 3000);
+    }
     die() {
+        clearInterval(runner);
         alert(`${this.name} has died`)
     }
 }
@@ -74,6 +79,7 @@ function createPet (name) {
     myPet.setAttribute('class', "pet")
     let myEgg = document.createElement("img")
     myEgg.setAttribute('src', "/img/demon_cat.webp")
+    myEgg.setAttribute('id', "petImage")
     myPet.appendChild(myEgg)
     document.querySelector('#center-piece').appendChild(myPet)
     document.querySelector('#starter').parentNode.removeChild(document.querySelector('#starter'))
@@ -88,7 +94,6 @@ goButton.addEventListener("click", () => createPet(starterForm.value))
 
 
 const eat1 = document.querySelector('#eat');
-console.log(eat1)
 const hiddeneat = document.querySelector('#eat img');
 eat1.addEventListener('mouseover', function handleMouseOver() {
     hiddeneat.style.display = 'block';
@@ -118,14 +123,14 @@ play1.addEventListener('mouseout', function handleMouseOut() {
 });
 
 
-const exercise1 = document.querySelector('#exercise');
-const hiddenexercise = document.querySelector('#exercise img');
-exercise1.addEventListener('mouseover', function handleMouseOver() {
-    hiddenexercise.style.display = 'block';
-});
-exercise1.addEventListener('mouseout', function handleMouseOut() {
-    hiddenexercise.style.display = 'none';
-});
+// const exercise1 = document.querySelector('#exercise');
+// const hiddenexercise = document.querySelector('#exercise img');
+// exercise1.addEventListener('mouseover', function handleMouseOver() {
+//     hiddenexercise.style.display = 'block';
+// });
+// exercise1.addEventListener('mouseout', function handleMouseOut() {
+//     hiddenexercise.style.display = 'none';
+// });
 
 function eat () {
     pet.eat()
@@ -154,21 +159,24 @@ function exercise () {
 hiddeneat.addEventListener("click", () => eat())
 hiddensleep.addEventListener("click", () => sleep())
 hiddenplay.addEventListener("click", () => play())
-hiddenexercise.addEventListener("click", () => exercise())
+// hiddenexercise.addEventListener("click", () => exercise())
 
 function life () {
-    pet.ageUp()
-    if (pet.hunger => 10) {
-        pet.die()
-    }
-    if (pet.sleepiness => 10) {
-        pet.die()
-    }
-    if (pet.boredom => 10) {
-        pet.die()
-    }
-    if (pet.fitness => 10) {
-        pet.die()
+    if (pet.name !== undefined) {
+        pet.ageUp()
+        if (pet.hunger >= 10) {
+            pet.die()
+        }
+        if (pet.sleepiness >= 10) {
+            pet.die()
+        }
+        if (pet.boredom >= 10) {
+            pet.die()
+        }
+        // if (pet.fitness >= 10) {
+        //     pet.die()
+        // }
     }
 }
 
+let runner = window.setInterval(life, 10000);
