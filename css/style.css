@@ -24,7 +24,7 @@ div {
 .box.top { top: 10%;}
 .box.right { right: 10%; }
 .box.left { left: 10%; }
-.box.bottom { bottom: 10% }
+.box.bottom { bottom: 20% }
 .box.center {
     top:40%;
     right: 40%;

@@ -4,7 +4,9 @@ class Creature {
         this.hunger = 1
         this.sleepiness = 1
         this.boredom = 1
+        this.fitness = 1
         this.age = 0
+        this.alive = 1
     }
     getAge() {
         return this.age
@@ -20,6 +22,16 @@ class Creature {
     }
     getBoredom() {
         return this.boredom
+    }
+    getFitness() {
+        return this.fitness
+    }
+    ageUp() {
+        this.hunger += 1
+        this.sleepiness += 1
+        this.boredom += 1
+        this.fitness += 1
+        this.age += 0
     }
     play() {
         if (this.boredom > 1) {
@@ -37,12 +49,18 @@ class Creature {
         }
     }
     exercise() {
-        if (this.boredom > 2) {
-            this.boredom -= 2
-            } 
+        if (this.boredom > 1) {
+            this.boredom -= 1
+            }
+        if (this.fitness > 2) {
+            this.fitness -= 1
+            }  
         this.hunger += 1
         this.sleepiness += 1
         }
+    die() {
+        alert(`${this.name} has died`)
+    }
 }
 
 starterForm = document.querySelector('#starter input')
@@ -70,6 +88,7 @@ goButton.addEventListener("click", () => createPet(starterForm.value))
 
 
 const eat1 = document.querySelector('#eat');
+console.log(eat1)
 const hiddeneat = document.querySelector('#eat img');
 eat1.addEventListener('mouseover', function handleMouseOver() {
     hiddeneat.style.display = 'block';
@@ -108,7 +127,48 @@ exercise1.addEventListener('mouseout', function handleMouseOut() {
     hiddenexercise.style.display = 'none';
 });
 
-hiddeneat.addEventListener("click", () => pet.eat())
-hiddensleep.addEventListener("click", () => pet.eat())
-hiddenplay.addEventListener("click", () => pet.eat())
-hiddenexercise.addEventListener("click", () => pet.eat())
+function eat () {
+    pet.eat()
+    let h2 = document.querySelector('#eat h2');
+    h2.innerHTML = pet.getHunger()
+}
+
+function sleep () {
+    pet.sleep()
+    let h2 = document.querySelector('#sleep h2');
+    h2.innerHTML = pet.getSleepiness()
+}
+
+function play () {
+    pet.play()
+    let h2 = document.querySelector('#play h2');
+    h2.innerHTML = pet.getBoredom()
+}
+
+function exercise () {
+    pet.exercise()
+    let h2 = document.querySelector('#exercise h2');
+    h2.innerHTML = pet.getFitness()
+}
+
+hiddeneat.addEventListener("click", () => eat())
+hiddensleep.addEventListener("click", () => sleep())
+hiddenplay.addEventListener("click", () => play())
+hiddenexercise.addEventListener("click", () => exercise())
+
+function life () {
+    pet.ageUp()
+    if (pet.hunger => 10) {
+        pet.die()
+    }
+    if (pet.sleepiness => 10) {
+        pet.die()
+    }
+    if (pet.boredom => 10) {
+        pet.die()
+    }
+    if (pet.fitness => 10) {
+        pet.die()
+    }
+}
+
