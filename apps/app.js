@@ -58,9 +58,9 @@ class Creature {
         document.body.style.backgroundColor = "black";
         document.body.style.backgroundImage = "none";
         function lightsOn() {
-            document.body.style.backgroundImage = url('../img/wild_background.gif')
+            document.body.style.backgroundImage = "url('../img/wild_background.gif')";
         }
-        window.setTimeout(lightsOn(), 3000);
+        window.setTimeout(lightsOn, 3000);
     }
     die() {
         clearInterval(runner);
