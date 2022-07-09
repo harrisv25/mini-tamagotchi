@@ -83,7 +83,7 @@ function createPet (name) {
     myPet.setAttribute('id', name)
     myPet.setAttribute('class', "pet")
     let myEgg = document.createElement("img")
-    myEgg.setAttribute('src', "/img/demon_cat.webp")
+    myEgg.setAttribute('src', "../img/demon_cat.webp")
     myEgg.setAttribute('id', "petImage")
     myPet.appendChild(myEgg)
     document.querySelector('#center-piece').appendChild(myPet)
