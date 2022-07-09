@@ -63,7 +63,7 @@ class Creature {
         document.body.style.backgroundColor = "black";
         document.body.style.backgroundImage = "none";
         function lightsOn() {
-            document.body.style.backgroundImage = url('https://github.com/harrisv25/mini-tamagotchi/blob/main/img/wild_background.gif?raw=true');
+            document.body.style.backgroundImage = 'url('https://github.com/harrisv25/mini-tamagotchi/blob/main/img/wild_background.gif?raw=true')';
         }
         window.setTimeout(lightsOn, 3000);
     }
@@ -84,8 +84,8 @@ function createPet (name) {
     myPet.setAttribute('class', "pet")
     let myEgg = document.createElement("img")
 //     myEgg.setAttribute('src', "../img/demon_cat.webp")
-//     myEgg.setAttribute('src', "https://raw.githubusercontent.com/harrisv25/mini-tamagotchi/main/img/demon_cat.webp")
-    import image from "../img/demon_cat.webp";
+    myEgg.setAttribute('src', "https://raw.githubusercontent.com/harrisv25/mini-tamagotchi/main/img/demon_cat.webp")
+//     import image from "../img/demon_cat.webp";
     myEgg.setAttribute('src', image)
     myEgg.setAttribute('id', "petImage")
     myPet.appendChild(myEgg)
