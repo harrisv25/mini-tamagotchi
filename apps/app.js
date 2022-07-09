@@ -63,9 +63,7 @@ class Creature {
         document.body.style.backgroundColor = "black";
         document.body.style.backgroundImage = "none";
         function lightsOn() {
-            import image from '../img/wild_background.gif';
-//             document.body.style.backgroundImage = "url('../img/wild_background.gif')";
-            document.body.style.backgroundImage = image
+            document.body.style.backgroundImage = "url('https://github.com/harrisv25/mini-tamagotchi/blob/main/img/wild_background.gif?raw=true')";
         }
         window.setTimeout(lightsOn, 3000);
     }
