@@ -65,7 +65,7 @@ class Creature {
         function lightsOn() {
             import image from '../img/wild_background.gif';
 //             document.body.style.backgroundImage = "url('../img/wild_background.gif')";
-            document.body.style.backgroundImage = "url(image)"
+            document.body.style.backgroundImage = image
         }
         window.setTimeout(lightsOn, 3000);
     }
