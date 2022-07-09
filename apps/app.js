@@ -31,6 +31,11 @@ class Creature {
         this.sleepiness += 1
         this.boredom += 1
         // this.fitness += 1
+        if (this.age >= 4) {
+            let petImage = document.querySelector('#petImage');
+            petImage.style.height = "175%";
+            petImage.style.width = "125%";
+        }
         this.age += 1
         let eat2 = document.querySelector('#eat h2');
         eat2.innerHTML = pet.getHunger()
