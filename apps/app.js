@@ -63,7 +63,7 @@ class Creature {
         document.body.style.backgroundColor = "black";
         document.body.style.backgroundImage = "none";
         function lightsOn() {
-            document.body.style.backgroundImage = "url('../img/wild_background.gif')";
+            document.body.style.backgroundImage = "url('./img/wild_background.gif')";
         }
         window.setTimeout(lightsOn, 3000);
     }
@@ -83,7 +83,7 @@ function createPet (name) {
     myPet.setAttribute('id', name)
     myPet.setAttribute('class', "pet")
     let myEgg = document.createElement("img")
-    myEgg.setAttribute('src', "../img/demon_cat.webp")
+    myEgg.setAttribute('src', "./img/demon_cat.webp")
     myEgg.setAttribute('id', "petImage")
     myPet.appendChild(myEgg)
     document.querySelector('#center-piece').appendChild(myPet)
