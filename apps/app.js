@@ -84,7 +84,9 @@ function createPet (name) {
     myPet.setAttribute('class', "pet")
     let myEgg = document.createElement("img")
 //     myEgg.setAttribute('src', "../img/demon_cat.webp")
-    myEgg.setAttribute('src', "https://raw.githubusercontent.com/harrisv25/mini-tamagotchi/main/img/demon_cat.webp")
+//     myEgg.setAttribute('src', "https://raw.githubusercontent.com/harrisv25/mini-tamagotchi/main/img/demon_cat.webp")
+    import image from "../img/demon_cat.webp";
+    myEgg.setAttribute('src', image)
     myEgg.setAttribute('id', "petImage")
     myPet.appendChild(myEgg)
     document.querySelector('#center-piece').appendChild(myPet)
