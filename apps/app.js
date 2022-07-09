@@ -63,7 +63,9 @@ class Creature {
         document.body.style.backgroundColor = "black";
         document.body.style.backgroundImage = "none";
         function lightsOn() {
-            document.body.style.backgroundImage = "url('../img/wild_background.gif')";
+            import image from '../img/wild_background.gif';
+//             document.body.style.backgroundImage = "url('../img/wild_background.gif')";
+            document.body.style.backgroundImage = "url(image)"
         }
         window.setTimeout(lightsOn, 3000);
     }
