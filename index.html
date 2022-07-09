@@ -8,26 +8,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="eat" class="function box bottom left">
+    <div id="eat" class="function box bottom left bin">
         <h1>Eat Here</h1>
-        <img src="/img/eat.webp">
+        <img src="/img/eat.webp" id="hidden">
     </div>
-    <div id="sleep" class="function box bottom right">
+    <div id="sleep" class="function box bottom right bin">
         <h1>Sleep Here</h1>
-        <img src="/img/sleep.gif">
+        <img src="/img/sleep.gif" id="hidden">
     </div>
-    <div id="play" class="function box top right">
+    <div id="play" class="function box top right bin">
         <h1>Play Here</h1>
-        <img src="/img/play.gif">
+        <img src="/img/play.gif" id="hidden">
     </div>
-    <div id="exercise" class="function box top left">
+    <div id="exercise" class="function box top left bin">
         <h1>Exercise Here</h1>
-        <img src="/img/exercise.gif">
+        <h2></h2>
+        <img src="/img/exercise.gif" id="hidden">
     </div>
     <div id="center-piece" class="box center">
         <form id='starter'>
-            <label for="pet_name"><h1>Welcome!</h1></label><br>
-            <input type="text" id="pet_name" name="pet_name" value="">Enter a pet name<br>
+            <label for="pet_name"><h1>Welcome! Enter Pet Name</h1></label><br>
+            <input type="text" id="pet_name" name="pet_name" value=""><br>
             <input id='goButton' type="submit" value="Let's Go!!!">
         </form> 
     </div>

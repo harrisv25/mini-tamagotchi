@@ -60,6 +60,7 @@ div {
     max-width: 130%;
     max-height: 130%;
     margin-top: -10%;
+    margin-right: -100%;
    }
 
 .pet img {
@@ -67,3 +68,72 @@ div {
     max-height: 100%;
     margin-top: -20%;
    }
+
+#hidden {
+    display: none;
+  }
+
+h1, h2 {
+    color :#DDFFF7;
+    /* position: relative; */
+    box-shadow: 5px 5px 21px 0 rgba(0,0,0,0.75);
+  }
+
+/* Animated boxes adapted from  https://www.sliderrevolution.com/resources/css-border-animation/  Author: Kang*/
+
+.bin:after, .bin:before{
+    mix-blend-mode:multiply;
+    filter:none;
+    z-index: -1;
+    content:'';
+    width:calc(100% + (25px * 2));
+    height:calc(100% + (25px * 2));
+    position: absolute;
+    display: block;
+    animation: border 10s ease-in-out infinite;
+    transform:translateX(-25px) translateY(-25px);
+  }
+
+  .bin:after {top: 10%}
+
+  @keyframes border {
+    0%, 100% {
+      -webkit-clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+              clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+    }
+    50% {
+      -webkit-clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+              clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+    }
+  }
+  
+
+  .bin:after{
+    animation-delay: -5s;
+    background-color: #93e1d8;
+    clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+  }
+  .bin:before {
+    background-color: #8b6c5c;
+      clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+  }
+
+.function {
+    display: none;
+}
+
+/* Elnarging images adapted from  https://stackoverflow.com/questions/9233979/css-is-it-possible-to-enlarge-with-animation-an-element-in-place-with-css*/
+
+img {
+    -webkit-transition:  -webkit-transform 2s ease-in-out;
+    -moz-transition: -moz-transform 2s ease-in-out;
+    -o-transition: -o-transform 2s ease-in-out;
+    -ms-transition: -ms-transform 2s ease-in-out; 
+    transition: transform 2s ease-in-out; 
+}
+img:hover {
+   -webkit-transform:scale(1.5);
+   -moz-transform:scale(1.5);
+   -o-transform:scale(1.5);
+   transform:scale(1.5);
+}
